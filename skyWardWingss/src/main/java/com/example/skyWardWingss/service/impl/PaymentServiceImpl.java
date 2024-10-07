@@ -3,7 +3,7 @@ package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.*;
 import com.example.skyWardWingss.dao.repository.*;
-import com.example.skyWardWingss.entity.*;
+//import com.example.skyWardWingss.entity.*;
 import com.example.skyWardWingss.model.enums.PaymentStatus;
 import com.example.skyWardWingss.model.enums.ReservationStatus;
 import com.example.skyWardWingss.model.enums.SeatStatus;
@@ -13,7 +13,7 @@ import com.example.skyWardWingss.model.exceptions.child.SeatNotFoundException;
 import com.example.skyWardWingss.mapper.PaymentMapper;
 import com.example.skyWardWingss.model.dto.request.PaymentRequestDto;
 import com.example.skyWardWingss.model.dto.response.PaymentResponse;
-import com.example.skyWardWingss.repository.*;
+//import com.example.skyWardWingss.dao.repository.*;
 import com.example.skyWardWingss.service.PaymentService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

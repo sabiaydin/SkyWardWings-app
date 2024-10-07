@@ -3,15 +3,13 @@ package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.*;
 import com.example.skyWardWingss.dao.repository.*;
-import com.example.skyWardWingss.entity.*;
-import com.example.skyWardWingss.model.exceptions.InvalidFlightIdException;
-import com.example.skyWardWingss.model.exceptions.SeatAlreadyReservedException;
-import com.example.skyWardWingss.model.exceptions.child.ReservationNotFoundException;
 import com.example.skyWardWingss.mapper.CustomerMapper;
 import com.example.skyWardWingss.mapper.ReservationMapper;
 import com.example.skyWardWingss.model.dto.request.ReservationRequestDto;
 import com.example.skyWardWingss.model.dto.response.ReservationResponse;
-import com.example.skyWardWingss.repository.*;
+import com.example.skyWardWingss.model.exceptions.InvalidFlightIdException;
+import com.example.skyWardWingss.model.exceptions.SeatAlreadyReservedException;
+import com.example.skyWardWingss.model.exceptions.child.ReservationNotFoundException;
 import com.example.skyWardWingss.service.ReservationService;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
