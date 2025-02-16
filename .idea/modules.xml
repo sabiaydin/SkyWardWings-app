@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/skyWardWingss.iml" filepath="$PROJECT_DIR$/.idea/skyWardWingss.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/skyWardWingss.skyWardWingss.main~1.iml" filepath="$PROJECT_DIR$/.idea/modules/skyWardWingss.skyWardWingss.main~1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/skyWardWingss.skyWardWingss.main.iml" filepath="$PROJECT_DIR$/.idea/modules/skyWardWingss.skyWardWingss.main.iml" />
     </modules>
   </component>
 </project>

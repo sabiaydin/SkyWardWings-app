@@ -1,6 +1,5 @@
 package com.example.skyWardWingss.utility;
 
-import com.example.skyWardWingss.utility.JwtUtil;
 import io.jsonwebtoken.Claims;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
