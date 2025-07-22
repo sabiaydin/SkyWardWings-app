@@ -1,7 +1,7 @@
-package com.example.skyWardWingss.controller;
+package com.example.skyWardWingss.exceptions;
 
-import com.example.skyWardWingss.model.exceptions.InvalidFlightIdException;
-import com.example.skyWardWingss.model.exceptions.SeatAlreadyReservedException;
+import com.example.skyWardWingss.exceptions.InvalidFlightIdException;
+import com.example.skyWardWingss.exceptions.SeatAlreadyReservedException;
 import com.example.skyWardWingss.model.ExceptionDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

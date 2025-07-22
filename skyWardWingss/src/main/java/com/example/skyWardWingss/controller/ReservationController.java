@@ -19,22 +19,19 @@ public class ReservationController {
     @PostMapping("/reserve-flight")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<ReservationResponse> reserveFlight(@RequestBody ReservationRequestDto reservationRequestDto) {
-        ReservationResponse reservationResponse = reservationService.reserveFlight(reservationRequestDto);
-        return ResponseEntity.ok(reservationResponse);
+        return ResponseEntity.ok(reservationService.reserveFlight(reservationRequestDto));
     }
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<ReservationResponse> getReservationById(@PathVariable Long id) {
-        ReservationResponse reservationResponse = reservationService.getReservationById(id);
-        return ResponseEntity.ok(reservationResponse);
+        return ResponseEntity.ok(reservationService.getReservationById(id));
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Page<ReservationResponse>> getAllReservations(Pageable pageable) {
-        Page<ReservationResponse> reservationResponses = reservationService.getAll(pageable);
-        return ResponseEntity.ok(reservationResponses);
+        return ResponseEntity.ok(reservationService.getAll(pageable));
     }
 
     @DeleteMapping("/{id}")

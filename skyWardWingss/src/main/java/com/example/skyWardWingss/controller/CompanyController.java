@@ -16,14 +16,12 @@ public class CompanyController {
     private final CompanyService companyService;
     @PostMapping
     public ResponseEntity<CompanyResponse> addCompany(@RequestBody CompanyRequestDto companyRequestDto) {
-        CompanyResponse companyResponse = companyService.add(companyRequestDto);
-        return ResponseEntity.ok(companyResponse);
+        return ResponseEntity.ok(companyService.add(companyRequestDto));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<CompanyResponse> updateCompany(@PathVariable Long id, @RequestBody CompanyRequestDto companyRequestDto) {
-        CompanyResponse companyResponse = companyService.update(id, companyRequestDto);
-        return ResponseEntity.ok(companyResponse);
+        return ResponseEntity.ok(companyService.update(id, companyRequestDto));
     }
 
     @DeleteMapping("/{id}")
@@ -34,13 +32,11 @@ public class CompanyController {
 
     @GetMapping("/{id}")
     public ResponseEntity<CompanyResponse> getCompanyById(@PathVariable Long id) {
-        CompanyResponse companyResponse = companyService.getById(id);
-        return ResponseEntity.ok(companyResponse);
+        return ResponseEntity.ok(companyService.getById(id));
     }
 
     @GetMapping
     public ResponseEntity<Page<CompanyResponse>> getAllCompanies(Pageable pageable) {
-        Page<CompanyResponse> companyResponses = companyService.getAll(pageable);
-        return ResponseEntity.ok(companyResponses);
+        return ResponseEntity.ok(companyService.getAll(pageable));
     }
 }

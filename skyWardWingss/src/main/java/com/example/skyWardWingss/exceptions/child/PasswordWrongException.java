@@ -1,6 +1,6 @@
-package com.example.skyWardWingss.model.exceptions.child;
+package com.example.skyWardWingss.exceptions.child;
 
-import com.example.skyWardWingss.model.exceptions.BadRequestException;
+import com.example.skyWardWingss.exceptions.BadRequestException;
 
 public class PasswordWrongException extends BadRequestException {
     public PasswordWrongException() {

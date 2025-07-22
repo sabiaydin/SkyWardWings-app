@@ -1,7 +1,7 @@
 package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.Customer;
-import com.example.skyWardWingss.model.exceptions.child.CustomerNotFoundException;
+import com.example.skyWardWingss.exceptions.child.CustomerNotFoundException;
 import com.example.skyWardWingss.mapper.CustomerMapper;
 import com.example.skyWardWingss.model.dto.request.CustomerRequestDto;
 import com.example.skyWardWingss.model.dto.response.CustomerResponse;

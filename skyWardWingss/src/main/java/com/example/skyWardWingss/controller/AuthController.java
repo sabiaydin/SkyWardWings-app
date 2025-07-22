@@ -29,8 +29,10 @@ public class AuthController {
         return authenticationService.requestPasswordReset(email);
     }
 
-    @PatchMapping("/recovery-password")
+    @PatchMapping("/reset-password")
     public ResponseEntity<String> resetPassword(@RequestBody @Valid RecoveryPassword recoveryPassword) {
         return authenticationService.resetPassword(recoveryPassword);
     }
+
+
 }

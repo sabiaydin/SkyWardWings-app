@@ -8,7 +8,5 @@ import org.mapstruct.NullValuePropertyMappingStrategy;
 
 @Mapper(componentModel = "spring",nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
 public interface SeatMapper {
-    Seat toSeat(SeatRequest seatRequest);;
-
     void updateSeatFromDto(@MappingTarget Seat seat, SeatRequest seatRequest);
 }

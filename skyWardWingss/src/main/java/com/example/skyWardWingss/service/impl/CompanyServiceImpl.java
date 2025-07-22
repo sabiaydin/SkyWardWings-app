@@ -1,7 +1,7 @@
 package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.Company;
-import com.example.skyWardWingss.model.exceptions.child.CompanyNotFoundException;
+import com.example.skyWardWingss.exceptions.child.CompanyNotFoundException;
 import com.example.skyWardWingss.mapper.CompanyMapper;
 import com.example.skyWardWingss.model.dto.request.CompanyRequestDto;
 import com.example.skyWardWingss.model.dto.response.CompanyResponse;

@@ -1,6 +1,6 @@
-package com.example.skyWardWingss.model.exceptions.child;
+package com.example.skyWardWingss.exceptions.child;
 
-import com.example.skyWardWingss.model.exceptions.NotFoundException;
+import com.example.skyWardWingss.exceptions.NotFoundException;
 
 public class AirplaneNotFoundException extends NotFoundException {
     public AirplaneNotFoundException(String message) {

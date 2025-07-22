@@ -2,8 +2,8 @@ package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.Airplane;
 import com.example.skyWardWingss.dao.entity.Seat;
-import com.example.skyWardWingss.model.exceptions.child.AirplaneNotFoundException;
-import com.example.skyWardWingss.model.exceptions.child.SeatNotFoundException;
+import com.example.skyWardWingss.exceptions.child.AirplaneNotFoundException;
+import com.example.skyWardWingss.exceptions.child.SeatNotFoundException;
 import com.example.skyWardWingss.mapper.AirplaneMapper;
 import com.example.skyWardWingss.mapper.SeatMapper;
 import com.example.skyWardWingss.model.dto.request.AirplaneRequestDto;

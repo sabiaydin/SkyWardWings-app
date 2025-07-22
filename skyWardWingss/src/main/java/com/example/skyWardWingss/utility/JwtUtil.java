@@ -2,7 +2,7 @@ package com.example.skyWardWingss.utility;
 
 import com.example.skyWardWingss.dao.entity.Authority;
 import com.example.skyWardWingss.dao.entity.User;
-import com.example.skyWardWingss.model.exceptions.child.UserNotFoundException;
+import com.example.skyWardWingss.exceptions.child.UserNotFoundException;
 import com.example.skyWardWingss.dao.repository.UserRepository;
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

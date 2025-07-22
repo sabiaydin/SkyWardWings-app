@@ -4,7 +4,7 @@ import com.example.skyWardWingss.dao.entity.Authority;
 import com.example.skyWardWingss.dao.entity.Customer;
 import com.example.skyWardWingss.dao.entity.PasswordResetToken;
 import com.example.skyWardWingss.dao.entity.User;
-import com.example.skyWardWingss.model.exceptions.child.PasswordMismatchException;
+import com.example.skyWardWingss.exceptions.child.PasswordMismatchException;
 import com.example.skyWardWingss.mapper.CustomerMapper;
 import com.example.skyWardWingss.mapper.UserMapper;
 import com.example.skyWardWingss.model.dto.request.EmailRequest;

@@ -20,20 +20,17 @@ public class AirplaneController {
 
     @GetMapping("/{id}")
     public ResponseEntity<AirplaneResponse> getById(@PathVariable Long id) {
-        AirplaneResponse airplaneResponse = airplaneService.getById(id);
-        return ResponseEntity.ok(airplaneResponse);
+        return ResponseEntity.ok(airplaneService.getById(id));
     }
 
     @GetMapping
     public ResponseEntity<Page<AirplaneResponse>> getAll(Pageable pageable) {
-        Page<AirplaneResponse> airplaneResponses = airplaneService.getAll(pageable);
-        return ResponseEntity.ok(airplaneResponses);
+        return ResponseEntity.ok(airplaneService.getAll(pageable));
     }
 
     @PostMapping
     public ResponseEntity<AirplaneResponse> add(@RequestBody AirplaneRequestDto airplaneRequestDto) {
-        AirplaneResponse newAirplane = airplaneService.add(airplaneRequestDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(newAirplane);
+        return ResponseEntity.status(HttpStatus.CREATED).body(airplaneService.add(airplaneRequestDto));
     }
 
     @PutMapping("/{id}")

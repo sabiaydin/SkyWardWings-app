@@ -34,22 +34,19 @@ public class FlightController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<FlightResponse> getById(@PathVariable Long id) {
-        FlightResponse flightResponse = flightService.getById(id);
-        return ResponseEntity.ok(flightResponse);
+        return ResponseEntity.ok(flightService.getById(id));
     }
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public ResponseEntity<Page<FlightResponse>> getAll(Pageable pageable) {
-        Page<FlightResponse> flightResponses = flightService.getAll(pageable);
-        return ResponseEntity.ok(flightResponses);
+        return ResponseEntity.ok(flightService.getAll(pageable));
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<FlightResponse> add(@RequestBody FlightRequestDto flightRequestDto) {
-        FlightResponse newFlight = flightService.add(flightRequestDto);
-        return ResponseEntity.ok(newFlight);
+        return ResponseEntity.ok(flightService.add(flightRequestDto));
     }
 
     @PutMapping("/{id}")

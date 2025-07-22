@@ -20,15 +20,15 @@ public class CustomerController {
     private final CustomerService customerService;
 
     @PostMapping("/sign-up")
-    @ResponseStatus(HttpStatus.CREATED)
-    public void register(@RequestBody UserRequest userRequest){
+    public ResponseEntity<Void> register(@RequestBody UserRequest userRequest) {
         authenticationService.register(userRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<CustomerResponse> update(@PathVariable Long id, @RequestBody CustomerRequestDto customerRequestDto) {
-        CustomerResponse updatedCustomer = customerService.update(id, customerRequestDto);
-        return ResponseEntity.ok(updatedCustomer);
+        return ResponseEntity.ok(customerService.update(id, customerRequestDto));
     }
 
     @DeleteMapping("/{id}")
@@ -39,14 +39,12 @@ public class CustomerController {
 
     @GetMapping("/{id}")
     public ResponseEntity<CustomerResponse> getCustomerById(@PathVariable Long id) {
-        CustomerResponse customerResponse = customerService.getById(id);
-        return ResponseEntity.ok(customerResponse);
+        return ResponseEntity.ok(customerService.getById(id));
     }
 
     @GetMapping
     public ResponseEntity<Page<CustomerResponse>> getAllCustomers(Pageable pageable) {
-        Page<CustomerResponse> customers = customerService.getAll(pageable);
-        return ResponseEntity.ok(customers);
+        return ResponseEntity.ok(customerService.getAll(pageable));
     }
 
 }

@@ -1,7 +1,7 @@
 package com.example.skyWardWingss.service.impl;
 
-import com.example.skyWardWingss.model.exceptions.child.PasswordWrongException;
-import com.example.skyWardWingss.model.exceptions.child.UserNotFoundException;
+import com.example.skyWardWingss.exceptions.child.PasswordWrongException;
+import com.example.skyWardWingss.exceptions.child.UserNotFoundException;
 import com.example.skyWardWingss.model.dto.request.ChangePasswordDto;
 import com.example.skyWardWingss.dao.entity.User;
 import com.example.skyWardWingss.dao.entity.Customer;

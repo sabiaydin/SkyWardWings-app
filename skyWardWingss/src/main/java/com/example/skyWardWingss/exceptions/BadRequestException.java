@@ -1,4 +1,4 @@
-package com.example.skyWardWingss.model.exceptions;
+package com.example.skyWardWingss.exceptions;
 
 public class BadRequestException extends RuntimeException{
     public BadRequestException(String message){
