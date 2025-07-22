@@ -34,6 +34,8 @@ public class UserLogAspect {
 
     @Before("authenticateMethod()")
     public void logBeforeAuthentication(JoinPoint joinPoint) {
+        //AOP vasitəsilə metodun içində nələr baş verdiyini dinamik şəkildə əldə etməyə imkan verir,
+        //bu, login metodunun parametrlərinə çatmaq üçün istifadə olunur
         LoginRequestDto loginRequestDto = (LoginRequestDto) joinPoint.getArgs()[0];
         String username = loginRequestDto.getUsername();
         log.info("Attempting to authenticate user: {}", username);
@@ -41,7 +43,7 @@ public class UserLogAspect {
 
     @AfterReturning("authenticateMethod()")
     public void logSignIn(JoinPoint joinPoint) {
-        LoginRequestDto loginRequestDto = (LoginRequestDto) joinPoint.getArgs()[0];
+        LoginRequestDto loginRequestDto = (LoginRequestDto) joinPoint.getArgs()[0]; // AOP tərəfindən izlənilən metodun parametrlərini array şəklində verir.
         String username = loginRequestDto.getUsername();
         log.info("Authentication successful for user: {}", username);
 
