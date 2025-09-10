@@ -3,6 +3,7 @@ package com.example.skyWardWingss.dao.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -24,10 +25,10 @@ public class Flight {
 
     @OneToMany(mappedBy = "flight",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     @JsonManagedReference
+    @ToString.Exclude
     private List<Reservation> reservation;
 
     @OneToMany(mappedBy = "flight",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     private List<TypePrice> typePrice;
-
 
 }

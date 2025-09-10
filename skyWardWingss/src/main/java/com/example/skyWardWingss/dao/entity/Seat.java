@@ -3,6 +3,7 @@ package com.example.skyWardWingss.dao.entity;
 import com.example.skyWardWingss.model.enums.SeatStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 @Data
 @Table(name = "seats")
@@ -18,6 +19,7 @@ public class Seat {
 
     @ManyToOne
     @JoinColumn(name = "airplanes_id")
+    @ToString.Exclude
     private Airplane airplane;
 
     @Enumerated(EnumType.STRING)

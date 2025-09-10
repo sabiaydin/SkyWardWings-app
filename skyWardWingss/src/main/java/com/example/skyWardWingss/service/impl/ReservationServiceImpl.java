@@ -3,6 +3,7 @@ package com.example.skyWardWingss.service.impl;
 
 import com.example.skyWardWingss.dao.entity.*;
 import com.example.skyWardWingss.dao.repository.*;
+import com.example.skyWardWingss.exceptions.child.SeatNotFoundException;
 import com.example.skyWardWingss.mapper.CustomerMapper;
 import com.example.skyWardWingss.mapper.ReservationMapper;
 import com.example.skyWardWingss.model.dto.request.ReservationRequestDto;
@@ -45,12 +46,16 @@ public class ReservationServiceImpl implements ReservationService {
             if (isSeatReserved(reservationRequestDto.getSeatNumber(), flight)) {
                 throw new SeatAlreadyReservedException("Seat is already reserved");
             }
+            Seat seat = seatRepository.findFirstBySeatNumberAndAirplane(
+                    reservationRequestDto.getSeatNumber(),
+                    flight.getAirplane()
+            ).orElseThrow(() -> new SeatNotFoundException("Seat not found"));
             TypePrice price = priceRepository.findByFlightIdAndType(reservationRequestDto.getFlightId(),
                     reservationRequestDto.getSeatType());
-            Seat seat = new Seat();
-            seat.setSeatNumber(reservationRequestDto.getSeatNumber());
-            seat.setSeatType(reservationRequestDto.getSeatType());
-            seat.setAirplane(flight.getAirplane());
+
+            //seat.setSeatNumber(reservationRequestDto.getSeatNumber());
+            //seat.setSeatType(reservationRequestDto.getSeatType());
+            //seat.setAirplane(flight.getAirplane());
             if (isLoggedInUser) {
                 long reservationCount = reservationRepository.countByCustomerAndFlight(customer, flight);
                 if (reservationCount >= 3) {

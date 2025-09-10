@@ -10,6 +10,6 @@ public class CompanyRequestDto {
     private String address;
     @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", message = "Invalid email format")
     private String email;
-    @Pattern(regexp = "^\\+994[0-9]{9}$", message = "Invalid phone format")
+    @Pattern(regexp = "^[0-9]{16}$", message = "Bank account must be 16 digits")
     private String bankAccount;
 }

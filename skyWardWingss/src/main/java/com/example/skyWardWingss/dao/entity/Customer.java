@@ -3,12 +3,14 @@ package com.example.skyWardWingss.dao.entity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.List;
 
+@Entity
 @Data
 @Table(name = "customers")
-@Entity
+@ToString(exclude = {"reservation", "user", "cardDetail"})
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

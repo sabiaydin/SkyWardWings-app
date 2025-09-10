@@ -103,6 +103,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
 
     @Override
+    @Transactional
     public ResponseEntity<String> requestPasswordReset(String email) {
         log.info("requestPasswordReset method started by: {}", email);
         User user = userService.findByEmail(email);
@@ -118,13 +119,16 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         calendar.add(Calendar.MINUTE, 5);
         Date expiryDate = calendar.getTime();
 
+        createToken(user, newToken, expiryDate);
+
         EmailRequest receiverEmail = new EmailRequest();
         receiverEmail.setReceiver(email);
         receiverEmail.setText(newToken);
         receiverEmail.setSubject("SkyWardWings - recovery password");
+
+
         try {
             emailSenderService.sendSimpleEmail(receiverEmail);
-            createToken(user, newToken, expiryDate);
         } catch (Exception e) {
             log.error("Error due to: {}", e.getMessage());
             return ResponseEntity.badRequest().body("Email couldn't sent. Try again.");
@@ -169,8 +173,10 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     private void createToken(User user, String token, Date expiryDate) {
+        User managedUser = userRepository.findById(user.getId())
+                .orElseThrow(() -> new RuntimeException("User not found in DB"));
         PasswordResetToken passwordResetToken = new PasswordResetToken();
-        passwordResetToken.setUser(user);
+        passwordResetToken.setUser(managedUser);
         passwordResetToken.setToken(token);
         passwordResetToken.setExpiryDate(expiryDate);
         tokenRepository.save(passwordResetToken);

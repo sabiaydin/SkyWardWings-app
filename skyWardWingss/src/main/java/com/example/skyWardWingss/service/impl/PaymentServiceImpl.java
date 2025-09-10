@@ -21,6 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -42,7 +43,7 @@ public class PaymentServiceImpl implements PaymentService {
                     .orElseThrow(() -> new ReservationNotFoundException("Reservation with id :" + paymentRequestDto.getReservationId()));
 
             Payment payment = paymentMapper.toPayment(paymentRequestDto);
-
+            payment.setPaymentDate(LocalDateTime.now());
             Company company = companyRepository.findById(paymentRequestDto.getCompanyId())
                     .orElseThrow(() -> new CompanyNotFoundException("Company with id: " + paymentRequestDto.getCompanyId()));
 
